@@ -1,15 +1,23 @@
 #pragma once
 
 #include <memory>
+#include <vector>
 
 struct InputData
 {
-    // Параметри задачі
+    double x0 = 0.0;
+    double y0 = 1.0;
+    double xEnd = 1.0;
+    double h = 0.1;
 };
 
 struct Result
 {
-    // Характеристики результату
+    std::vector<double> xValues;
+    std::vector<double> yValues;
+    double finalValue;
+    double error;
+    double executionTime;
 };
 
 using InputDataPtr = std::shared_ptr<const InputData>;
