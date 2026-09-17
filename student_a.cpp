@@ -26,7 +26,7 @@ ResultPtr solveStudentA(InputDataPtr input)
     result->xValues.push_back(x);
     result->yValues.push_back(y);
 
-    while (x < input->xEnd)
+    while (x < input->xEnd - 1e-12)
     {
         double step = std::min(input->h, input->xEnd - x);
 
