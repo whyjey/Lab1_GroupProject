@@ -1,0 +1,8 @@
+/build
+/.vs
+/out
+/CMakeFiles
+/cmake-build-*
+*.user
+*.suo
+*.vcxproj.user
