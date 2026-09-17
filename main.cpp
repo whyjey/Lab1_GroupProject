@@ -15,7 +15,7 @@ int main()
 
     const auto& [xValues, yValues, finalValue, error, executionTime] = *resultA;
 
-    std::cout << "Student A - Euler method\n\n";
+    std::cout << "Student A - Euler method (Test conflict)\n\n";
 
     std::cout << std::fixed << std::setprecision(6);
 
