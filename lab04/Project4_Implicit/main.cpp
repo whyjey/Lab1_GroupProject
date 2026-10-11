@@ -1,4 +1,4 @@
-
+#include "polynomials.h"
 #include "ode.h"
 #include <iostream>
 
@@ -26,6 +26,31 @@ int main() {
 
     double negativeSteps = rungeKutta4(function, 0.0, 1.0, 0.1, -10);
     std::cout << "Negative steps count test: " << negativeSteps << '\n';
+    
+    double coeffs[] = {-2.0, 0.0, 1.0};
+    int degree = 2;
+
+    std::cout << "Polynomial value at x=3: "
+              << evaluate(coeffs, degree, 3.0) << '\n';
+
+    double derivativeCoeffs[2] = {};
+    derivative(coeffs, degree, derivativeCoeffs);
+
+    std::cout << "Derivative coefficients: "
+              << derivativeCoeffs[0] << ", "
+              << derivativeCoeffs[1] << '\n';
+
+    std::cout << "Newton root: "
+              << newtonRoot(coeffs, degree, 1.5, 100, 1e-6) << '\n';
+
+    double roots[2] = {};
+    int rootCount = findRoots(coeffs, degree, roots);
+
+    std::cout << "Roots found: " << rootCount << '\n';
+    for (int i = 0; i < rootCount && i < 2; i++) {
+        std::cout << roots[i] << '\n';
+    }
+
 
     return 0;
 }
